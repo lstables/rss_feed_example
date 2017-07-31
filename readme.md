@@ -9,5 +9,6 @@
 ------------------------------
 
 - `php artisan migrate` this will migrate the usual users & password table (which are not in use in this example) but also migrate the RSS table which is required.
-- once that has been run `php artisan pull:rss` to get the RSS feed and save it to the database, navigate to the home page to see the list appear which has links to the articles, as well as
+- once migrate as run, run `php artisan pull:rss` to get the RSS feed and save it to the database, navigate to the home page to see the list of articles appear which has links
+to the rss article, as well as
 action and delete functionality.
