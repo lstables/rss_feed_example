@@ -34,12 +34,23 @@ class FeedController extends Controller
 
     }
 
+    /**
+     * Show Actioned List
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function actioned()
     {
         $rss = Rss::onlyTrashed()->get();
         return view('trashed', compact('rss'));
     }
 
+    /**
+     * Force Delete the item
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function delete($id)
     {
         Rss::where('id', $id)->forceDelete();
