@@ -1,4 +1,5 @@
 ### Installation
+#### Using Laravel 5.4, a RSS package and SweetAlert Package with MySQL
 
 - git clone git@github.com:lstables/rss_feed_example.git
 
@@ -8,7 +9,10 @@
 
 ------------------------------
 
-- `php artisan migrate` this will migrate the usual users & password table (which are not in use in this example) but also migrate the RSS table which is required.
-- once migrate as run, run `php artisan pull:rss` to get the RSS feed and save it to the database, navigate to the home page to see the list of articles appear which has links
+`php artisan migrate` this will migrate the usual users & password table (which are not in use in this example) but also migrate the RSS table which is required.
+
+once migrate as run...
+
+run `php artisan pull:rss` to get the RSS feed and save it to the database, navigate to the home page to see the list of articles appear which has links
 to the rss article, as well as
 action and delete functionality.
