@@ -22,15 +22,6 @@ class PullRSS extends Command
      */
     protected $description = 'Poll RSS feed into database';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
 
     /**
      * Execute the console command.
@@ -59,15 +50,15 @@ class PullRSS extends Command
         {
             $posts = new Rss;
             $posts->title = $item->title;
-            $posts->pubDate = Carbon::parse($item->pubDate)->format('Y-m-d H:i:s');
+            $posts->pubDate = $item->pubDate;
             $posts->description = $item->description;
             $posts->link = $item->link;
             $posts->save();
         }
 
+        $this->info('RSS polled and database updated.');
+
         return $posts;
 
-
-        $this->info('RSS polled and database updated.');
     }
 }

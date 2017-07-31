@@ -168,6 +168,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         willvincent\Feeds\FeedsServiceProvider::class,
+        Socieboy\Alerts\AlertServiceProvider::class,
 
         /*
          * Application Service Providers...
