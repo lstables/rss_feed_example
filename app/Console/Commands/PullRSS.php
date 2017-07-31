@@ -30,6 +30,7 @@ class PullRSS extends Command
      */
     public function handle()
     {
+        // get source url from ENV
         $source = env('FEED_URL');
 
         $headers = get_headers($source);
@@ -38,13 +39,14 @@ class PullRSS extends Command
         {
             return 'Invalid Source';
         }
-
+        // get the content from the source
         $data = simplexml_load_string(file_get_contents($source));
 
         if (count($data) == 0)
         {
             return 'No Posts';
         }
+        // Assign to posts array, and loop through, while adding to db
         $posts = '';
         foreach($data->channel->item as $item)
         {
